@@ -2,7 +2,40 @@
 
 This is a minimal example of cross-application authentication using FastAPI and ORCID.
 
-There are two web apps here: `authenticate` and `protected`.
+There are two web apps here: `authenticate` which authenticates a user and returns the generated JWT, and `protected` which has a protected endpoint that requires an ORCID JWT to access.
+
+Although FastAPI is used as the web app here, the approach is not framework specific.
+
+A brief description is provided below, more detailed explanations in the source.
+
+See also:
+
+* https://github.com/ORCID/ORCID-Source/blob/main/orcid-web/ORCID_AUTH_WITH_OPENID_CONNECT.md#authorization-code-flow
+* https://info.orcid.org/documentation/integration-and-api-faq/
+* https://gitlab.com/jorgecarleitao/starlette-oauth2-api/-/blob/master/starlette_oauth2_api.py
+* https://docs.authlib.org/en/latest/client/starlette.html
+* https://github.com/mpdavis/python-jose/blob/5ec9f48c1babcbfa62d433b29e55db8888c315ec/jose/jwt.py
+
+## Install
+
+Create a virtual environment, then install using poetry. For example:
+
+```
+git clone https://github.com/datadavev/oauth_example.git
+cd oauth_example
+python -m venv venv
+source venv/bin/activate
+poetry install
+```
+
+Or if you are using `direnv`:
+
+```
+git clone https://github.com/datadavev/oauth_example.git
+cd oauth_example
+direnv allow
+poetry install
+```
 
 ## authenticate
 
