@@ -1,4 +1,4 @@
-# README for oatuh_example
+# README for oauth_example
 
 This is a minimal example of cross-application authentication using FastAPI and ORCID.
 
